@@ -25,11 +25,11 @@ spec:
       labels:
         app: frontend
     spec:
-      nodeSelector:
-        eks.amazonaws.com/nodegroup: stage-private
+      # nodeSelector:
+      #   eks.amazonaws.com/nodegroup: stage-private
       containers:
       - name: frontend
-        image: sathish8329/kovaiplay:1976
+        image: sathish8329/kovaiplay:v1
         ports:
         - containerPort: 80   # Ensure this matches the Service targetPort
 
