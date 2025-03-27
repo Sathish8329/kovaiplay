@@ -25,16 +25,14 @@ spec:
       labels:
         app: frontend
     spec:
-       nodeSelector:
-         eks.amazonaws.com/nodegroup: stage-private
+      nodeSelector:
+        eks.amazonaws.com/nodegroup: stage-private
       containers:
       - name: frontend
         image: sathish8329/kovaiplay:v1
         ports:
         - containerPort: 80   # Ensure this matches the Service targetPort
-
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
@@ -46,7 +44,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80          # External port exposed for the service
-      targetPort: 80    # Fix: This should match containerPort in Deployment
+      targetPort: 80    # This matches containerPort in Deployment
   type: ClusterIP        # Change to LoadBalancer if you need external access
-
----
