@@ -20,4 +20,4 @@ spec:
           service:
             name: kovaiplay-frontend-service  # Frontend service
             port:
-              number: 8081  # Fix: Matches the service port
+              number: 80  # Fix: Matches the service port
